@@ -7,6 +7,7 @@
 
 library(usethis)
 use_readme_rmd()
+usethis::use_news_md()
 
 load("../meeting/Data(application)/rdata.RData")
 Scheidler <- Scheidler[,-1]
@@ -50,10 +51,10 @@ check(document = FALSE, vignettes = FALSE)
 
 
 devtools::build_readme()
-usethis::use_news_md()
 
-library(pkgdown)
-build_site()
+pkgdown::build_site()
+
+
 
 
 ##******************************************************************************

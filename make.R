@@ -54,6 +54,7 @@ devtools::build_readme()
 
 pkgdown::build_site()
 
+pkgdown::build_news()
 
 
 

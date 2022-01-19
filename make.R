@@ -9,17 +9,21 @@ library(usethis)
 use_readme_rmd()
 usethis::use_news_md()
 
-load("../meeting/Data(application)/rdata.RData")
-Scheidler <- Scheidler[,-1]
+CD64 <- read.csv("../../GitHub/dtametasa-r/example-results/data-CD64.csv")
+IVD <- read.csv("../../GitHub/dtametasa-r/example-results/data-IVD.csv")
+
+# Scheidler <- Scheidler[,-1]
 use_data(IVD, overwrite = TRUE)
 use_data(Scheidler, overwrite = TRUE)
-source("R/data.pre.R")
-IVD2 <- logit.data(correction(IVD))
+# source("R/data.pre.R")
+IVD_2 <- .logit.data(.correction(IVD))
 Scheidler2 <- logit.data(correction(Scheidler))
-use_data(IVD2, overwrite = TRUE)
+use_data(IVD_2, overwrite = TRUE)
 use_data(Scheidler2, overwrite = TRUE)
 
-
+use_data(CD64)
+CD64_2 <- .logit.data(.correction(CD64))
+use_data(CD64_2)
 use_package("mvtnorm")
 
 
@@ -44,11 +48,11 @@ library(roxygen2)
 
 pkg <- as.package("../dtametasa/")
 
-load_all(pkg)
+##***********
 document(pkg)
-load_all()
+load_all(pkg)
 check(document = FALSE, vignettes = FALSE)
-
+##***********
 
 devtools::build_readme()
 

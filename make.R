@@ -47,6 +47,7 @@ library(roxygen2)
 
 
 pkg <- as.package("../dtametasa/")
+pkg <- as.package("../net.meta/")
 
 ##***********
 document(pkg)

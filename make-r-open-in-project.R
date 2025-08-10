@@ -17,11 +17,9 @@ library(pkgdown)
 ## main: load pkg document and check pkg
 document()
 load_all()
-check(document = F, vignettes = F)
+check(document = T, vignettes = F)
 
-tools::checkRd(dir = "man/")
-system("R CMD Rd2pdf C:\\Users\\zhouy\\Documents\\GitHub-Phsoft\\ICHe9r1\\")
-system("R CMD check")
+system("R CMD Rd2pdf .")
 
 # Sys.setenv(TZ = "UTC")
 
@@ -49,7 +47,7 @@ build_news()
 ## build vignette --> /doc
 # use_vignette("ICHer91")
 build_vignettes()
-
+vignette(pkgdown::metadata)
 
 ## check and update environment
 ## https://rstudio.github.io/renv/articles/renv.html

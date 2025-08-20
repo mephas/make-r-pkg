@@ -17,9 +17,9 @@ library(pkgdown)
 ## main: load pkg document and check pkg
 document()
 load_all()
-check(document = T, vignettes = F)
+check(document = T, vignettes = F,build_args = "--no-build-vignettes")
 
-system("R CMD Rd2pdf .")
+system("R CMD build C:/Users/zhouy/Documents/GitHub-Phsoft/ICHe9r1")
 
 # Sys.setenv(TZ = "UTC")
 
@@ -30,10 +30,10 @@ system("R CMD Rd2pdf .")
 
 
 ## load data --> /data
-dat <- load("data/bmt.rda")
-use_data(bmt, overwrite = TRUE)
-# use_package("survival")
-# use_package("MASS", type = "Depends")
+# dat <- load("data/bmt.rda")
+# use_data(bmt, overwrite = TRUE)
+# use_package("DT")
+# use_package("psych", type = "Depends")
 # use_package("cmprsk", type = "Depends")
 
 
@@ -46,12 +46,13 @@ build_news()
 
 ## build vignette --> /doc
 # use_vignette("ICHer91")
-build_vignettes()
-vignette(pkgdown::metadata)
+# build_vignettes()
+# vignette(pkgdown::metadata)
 
 ## check and update environment
 ## https://rstudio.github.io/renv/articles/renv.html
 # library(renv)
 # renv::update()
 # renv::snapshot()
-
+# renv::status()
+# renv::restore()

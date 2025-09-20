@@ -21,6 +21,8 @@ check(document = T, vignettes = F,build_args = "--no-build-vignettes")
 
 system("R CMD build C:/Users/zhouy/Documents/GitHub-Phsoft/ICHe9r1")
 
+system("R CMD Rd2pdf . --title='ICHe9r1.pdf'")
+
 # Sys.setenv(TZ = "UTC")
 
 ## create documents --> need manual revision

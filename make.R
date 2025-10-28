@@ -52,7 +52,7 @@ library(usethis)
 
 
 # pkg <- as.package("C:/Users/zhouy/Documents/Gitee-PKU/CSTE/CSTE-main/CSTE-main/")
-pkg <- as.package("C:/Users/zhouy/Documents/GitHub-Phsoft/ICHe9r1/")
+pkg <- as.package("C:/Users/zhouy/Documents/GitHub-Phsoft/pkg/tteICE")
 
 ##***********
 document(pkg)
@@ -93,4 +93,10 @@ update(dev_package_deps(dependencies=TRUE))
 
 
 
-renv::init()
+# renv::init()
+
+
+## check pkg
+options(timeout = 300)
+Sys.setenv(R_DEFAULT_INTERNET_TIMEOUT = "300")
+system("R CMD check --as-cran C:/Users/zhouy/Documents/GitHub-Phsoft/pkg/tteICE")

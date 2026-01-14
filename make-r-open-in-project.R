@@ -16,9 +16,24 @@ library(roxygen2)
 ## main: load pkg document and check pkg
 document()
 load_all()
+
+install()
+
 # Sys.which("quarto") == ""
 # Sys.setenv("_R_CHECK_BUILD_VIGNETTES_" = "false")
 check(document = TRUE, vignettes = FALSE,build_args = "--no-build-vignettes")
+
+
+
+help(package="tteICE")
+help("tteICE")
+methods(class="tteICE")
+
+library(tteICE)
+example("surv.tteICE")
+example("plot.tteICE")
+exists("surv.tteICE")
+example("surv.tteICE", package = "tteICE")
 
 # system("R CMD build .")
 system("R CMD Rd2pdf .")

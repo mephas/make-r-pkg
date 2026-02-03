@@ -29,11 +29,11 @@ devtools::check("tteICE")
 # devtools::check_built("C:\\Users\\zhouy\\Documents\\GitHub-Phsoft\\pkg\\tteICE_1.1.0.tar.gz")
 
 system("R CMD build tteICE")
-system("R CMD check tteICE_1.1.0.tar.gz")
+system("R CMD check tteICE_1.1.1.tar.gz")
 
 library(spelling)
 setwd("~/GitHub-Phsoft/pkg/tteICE")
-spelling::spell_check_package()
+spell_check_package()
 # get_wordlist()
 update_wordlist()
 desc::desc_validate()

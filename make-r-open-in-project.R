@@ -8,7 +8,7 @@
 library(devtools)
 library(pkgdown)
 library(roxygen2)
-
+# library(usethis)
 # pkg <- as.package("C:/Users/zhouy/Documents/GitHub-Phsoft/tteICE")
 
 # use_gpl_license(version = 3, include_future = TRUE)
@@ -30,7 +30,7 @@ help(package="tteICE")
 help("tteICE")
 methods(class="tteICE")
 
-library(tteICE)
+# library(tteICE)
 example("surv.tteICE")
 example("plot.tteICE")
 exists("surv.tteICE")
@@ -64,15 +64,15 @@ system("R CMD check --as-cran .")
 ## build github website --> /docs
 ## build this after installing the pkg
 
-library(devtools)
-library(usethis)
+
+# library(usethis)
 ## First of the first, install the latest pkg
 ## run Rmd to create MD
 ## then, reproduce md based on the revised Rmd
 build_readme()
 build_site()
+build_news()
 
-# build_news()
 # use_build_ignore("docs")
 
 

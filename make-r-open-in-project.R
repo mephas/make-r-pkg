@@ -51,6 +51,11 @@ system("R CMD check --as-cran .")
 # use_readme_rmd()
 # use_news_md()
 
+library(spelling)
+setwd("~/GitHub-Phsoft/pkg/tteICE")
+spell_check_package()
+# get_wordlist()
+update_wordlist()
 
 
 ## load data --> /data
@@ -69,9 +74,11 @@ system("R CMD check --as-cran .")
 ## First of the first, install the latest pkg
 ## run Rmd to create MD
 ## then, reproduce md based on the revised Rmd
+##
+build_news()
 build_readme()
 build_site()
-build_news()
+
 
 # use_build_ignore("docs")
 
